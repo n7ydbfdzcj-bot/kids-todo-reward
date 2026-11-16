@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>우리집 할일 캐시</title>
+<meta name="description" content="아이와 부모가 함께 쓰는 할 일 체크와 현금 보상 앱">
+<meta name="theme-color" content="#FFEDF3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="할일캐시">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-emoji" aria-hidden="true">🐣</span>
+      <span class="brand-title">우리집 할일 캐시</span>
+    </div>
+    <div class="topbar-right">
+      <span class="sync-chip" id="syncChip" hidden></span>
+      <button type="button" class="mode-btn" id="modeBtn" data-act="switch-mode">부모 모드</button>
+    </div>
+  </header>
+  <main id="view" class="view" role="main"></main>
+  <nav id="tabbar" class="tabbar" aria-label="화면 이동"></nav>
+</div>
+<div id="sheetRoot"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

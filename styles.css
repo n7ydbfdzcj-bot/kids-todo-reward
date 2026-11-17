@@ -47,7 +47,10 @@ body {
 
 /* 치이카와 배경 레이어
    iOS Safari는 background-attachment: fixed + cover 조합이 깨지는 경우가 있어서
-   화면에 고정된 ::before 레이어에 사진을 깔았어요. */
+   화면에 고정된 ::before 레이어에 사진을 깔았어요.
+   가로로 긴 그림이라 휴대폰 세로 화면에서 cover로 깔면 얼굴만 크게 확대되어
+   치이카와인지 알아보기 어렵습니다. 그래서 화면 너비에 맞춰 위아래로 이어 붙여
+   숲길을 따라 걷는 모습이 은은한 벽지처럼 보이게 했어요. */
 body::before {
   content: "";
   position: fixed;
@@ -59,9 +62,9 @@ body::before {
   z-index: 0;
   background-color: var(--cream);
   background-image: url("chiikawa-bg.gif");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 100% auto;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -1050,6 +1053,8 @@ input[type="date"].input { min-height: 46px; }
 
 @media (min-width: 620px) {
   body { padding: 0 12px; }
+  /* 넓은 화면에서는 배경 그림이 너무 커지지 않게 크기를 고정해요 */
+  body::before { background-size: 640px auto; }
   #app {
     margin: 16px auto;
     min-height: calc(100vh - 32px);

@@ -1,6 +1,6 @@
 /* 오프라인에서도 앱이 열리도록 화면 파일을 기기에 저장해 둡니다.
    파일을 고친 뒤에는 아래 버전 이름을 바꾸면 새 파일로 바뀝니다. */
-var CACHE_NAME = 'kids-todo-reward-v2';
+var CACHE_NAME = 'kids-todo-reward-v3';
 var ASSETS = [
   './',
   './index.html',

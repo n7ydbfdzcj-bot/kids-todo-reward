@@ -1713,7 +1713,17 @@
   function registerSW() {
     if (!('serviceWorker' in navigator)) { return; }
     if (location.protocol !== 'http:' && location.protocol !== 'https:') { return; }
-    navigator.serviceWorker.register('sw.js').catch(function () { /* 오프라인 캐시는 없어도 동작 */ });
+    // 새 버전의 캐시가 준비되면 한 번만 새로 고쳐서, 홈 화면에 추가해 둔 폰에서도 바로 반영되게 합니다.
+    var hadController = !!navigator.serviceWorker.controller;
+    var reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!hadController || reloading) { return; }
+      reloading = true;
+      location.reload();
+    });
+    navigator.serviceWorker.register('sw.js').then(function (reg) {
+      if (reg && reg.update) { reg.update().catch(function () {}); }
+    }).catch(function () { /* 오프라인 캐시는 없어도 동작 */ });
   }
 
   function boot() {

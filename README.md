@@ -31,7 +31,9 @@
 index.html        앱 화면 뼈대 (아이폰 PWA 메타 태그 포함)
 styles.css        파스텔 디자인 · 모바일 레이아웃 · 안전영역(safe-area) 처리
 app.js            모든 동작 (할 일 · 적립 · 현금 교환 · 동기화)
-bg-pattern.svg    배경 무늬 (직접 그린 구름 · 별 · 하트 패턴)
+chiikawa-bg.gif   배경 사진 (움직이는 치이카와 — 바카바카루 님이 보내주신 이미지)
+chiikawa-bg-still.jpg   같은 사진의 정지컷 (동작 줄이기 설정일 때 사용)
+bg-pattern.svg    예전 배경 무늬 (지금은 쓰지 않지만 지우지 않고 남겨 둠)
 icon.svg / icon-192.png / icon-512.png / apple-touch-icon.png   앱 아이콘
 manifest.json     PWA 설정
 sw.js             오프라인에서도 열리게 하는 캐시 (있으면 좋은 기능)
